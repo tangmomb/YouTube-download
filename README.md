@@ -95,3 +95,42 @@ yt-dlp -f "bestvideo[height<=1080][vcodec^=avc]+bestaudio[ext=m4a]" --merge-outp
 - Sous-titres :
   - **Softsubs** : intégrés et désactivables (ex. dans VLC).
   - **Hardsubs** : encodés et toujours visibles.
+
+---
+
+## 7. Erreur courante 🙈
+
+yt-dlp a souvent besoin d'être mis à jour pour contourner les MAJ YouTube. Il se peut qu'il vous demande d'être mis à jour dans la console. Pour ce faire, dans PowerShell :
+
+```powershell
+# Dossier où installer yt-dlp
+$installPath = "C:\Users\Tangeek\Documents\dlp-yt"
+$exePath = Join-Path $installPath "yt-dlp.exe"
+
+# URL de la dernière release yt-dlp
+$ytDlpUrl = "https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe"
+
+Write-Host "🚀 Téléchargement de la dernière version de yt-dlp..."
+
+# Crée le dossier si besoin
+if (-not (Test-Path $installPath)) {
+    New-Item -ItemType Directory -Path $installPath | Out-Null
+}
+
+# Télécharge yt-dlp.exe
+Invoke-WebRequest -Uri $ytDlpUrl -OutFile $exePath -UseBasicParsing
+
+Write-Host "✅ yt-dlp a été mis à jour dans $exePath"
+
+# Vérification de la version
+& $exePath --version
+
+```
+
+Vérifier une seconde fois que la version a bien changé :
+
+```powershell
+yt-dlp --version
+```
+
+**Enjoi! 🍿**
