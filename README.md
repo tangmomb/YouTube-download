@@ -89,31 +89,9 @@ yt-dlp -f "bestvideo[height<=1080][vcodec^=avc]+bestaudio[ext=m4a]" --merge-outp
 
 ## 6. Résultats
 
-- Les vidéos sont enregistrées dans le dossier de la fenêtre PowerShell.
+- Les vidéos sont enregistrées dans le dossier des téléchargements.
 - Le nom des fichiers est basé sur le titre de la vidéo YouTube, ou avec numérotation + titre pour les playlists.
 - Format final : **MP4** (codec vidéo H.264 + audio AAC).
 - Sous-titres :
   - **Softsubs** : intégrés et désactivables (ex. dans VLC).
   - **Hardsubs** : encodés et toujours visibles.
-
----
-
-## 7. Cheat Sheet rapide
-
-### 🎥 Vidéo simple
-
-```powershell
-yt-dlp URL
-```
-
-### 📺 Playlist avec numérotation (1080p H.264)
-
-```powershell
-yt-dlp -f "bestvideo[height<=1080][vcodec^=avc]+bestaudio[ext=m4a]" --merge-output-format mp4 -o "%(playlist_index)02d - %(title)s.%(ext)s" PLAYLIST_URL
-```
-
-### 📝 Avec sous-titres FR (softsubs)
-
-```powershell
-yt-dlp --sub-langs "fr" --embed-subs URL
-```
