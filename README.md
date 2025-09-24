@@ -73,6 +73,11 @@ yt-dlp -f "bestvideo[height<=1080][vcodec^=avc]+bestaudio[ext=m4a]/best[ext=mp4]
 yt-dlp -f "bestvideo[height<=1080][vcodec^=avc]+bestaudio[ext=m4a]/best[ext=mp4]" --merge-output-format mp4 -o "$env:USERPROFILE\Downloads\%(playlist_index)02d - %(title)s.%(ext)s" https://www.youtube.com/playlist?list=ID_DE_LA_PLAYLIST
 ```
 
+> [!TIP]
+> Pour avoir le lien d'une playlist, cliquez-ici :
+
+![Texte alternatif](lien_playlist.png)
+
 ### c) Télécharger avec sous-titres FR intégrés (désactivables, softsubs)
 
 ```powershell
